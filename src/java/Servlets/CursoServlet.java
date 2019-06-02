@@ -70,7 +70,7 @@ public class CursoServlet extends HttpServlet {
                 Curso curso = null;
                 try {
                     curso = new Curso();
-                    curso.setId(request.getParameter("id"));
+                    curso.setId(request.getParameter("codigo"));
                     curso.setNombre(request.getParameter("nombre"));
                     curso.setCreditos(Integer.parseInt(request.getParameter("creditos")));
                     curso.setHorasSemanales(Integer.parseInt(request.getParameter("horas")));
@@ -102,7 +102,7 @@ public class CursoServlet extends HttpServlet {
             //Elimina el ultimo estudiante en la lista ya que no tienen identificador unico
             case 3:
                 try {
-                    String id = request.getParameter("id");
+                    String id = request.getParameter("codigo");
                     
                     if(eliminarCurso(id)){
                         out.println("Curso eliminado.");
@@ -117,7 +117,7 @@ public class CursoServlet extends HttpServlet {
                 Curso cursoedit = null;
                 try {
                     cursoedit = new Curso();
-                    cursoedit.setId(request.getParameter("id"));
+                    cursoedit.setId(request.getParameter("codigo"));
                     cursoedit.setNombre(request.getParameter("nombre"));
                     cursoedit.setCreditos(Integer.parseInt(request.getParameter("creditos")));
                     cursoedit.setHorasSemanales(Integer.parseInt(request.getParameter("horas")));
